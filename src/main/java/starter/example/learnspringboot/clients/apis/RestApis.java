@@ -13,8 +13,9 @@ import java.util.List;
 
 
 @Service
-public class RestApis {
+public class RestApis implements RestApisInf {
 
+    @Override
     public OrderDTO fetchOrderUser (Long id) {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<OrderDTO> response = restTemplate.getForEntity("https://jsonplaceholder.typicode.com/todos/" + id, OrderDTO.class);
@@ -30,6 +31,7 @@ public class RestApis {
 //    }
 
 
+    @Override
     public List<OrderDTO> getListOrderUser () {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<List<OrderDTO>> res = restTemplate.exchange(
