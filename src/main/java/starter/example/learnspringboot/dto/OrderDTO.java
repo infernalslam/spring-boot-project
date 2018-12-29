@@ -2,6 +2,8 @@ package starter.example.learnspringboot.dto;
 
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 @Data
 public class OrderDTO {
@@ -10,4 +12,5 @@ public class OrderDTO {
     private long id;
     private String title;
     private Boolean completed;
+
 }

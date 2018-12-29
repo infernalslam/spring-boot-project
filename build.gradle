@@ -28,8 +28,25 @@ dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-actuator')
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	compileOnly('org.projectlombok:lombok')
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	testImplementation('org.springframework.restdocs:spring-restdocs-mockmvc')
-	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
-	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+	
+	testImplementation('org.junit.jupiter:junit-jupiter-api:5.2.0')
+	testCompile('org.junit.jupiter:junit-jupiter-params:5.2.0')
+	testRuntime('org.junit.jupiter:junit-jupiter-engine:5.2.0')
+	testCompile "org.mockito:mockito-core:2.+"
+	testCompile('org.mockito:mockito-junit-jupiter:2.18.3')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+
+test {
+	afterSuite { desc, result ->
+		if (!desc.parent) {
+			println "\nTest result: ${result.resultType}"
+			println "Test summary: ${result.testCount} tests, " +
+					"${result.successfulTestCount} succeeded, " +
+					"${result.failedTestCount} failed, " +
+					"${result.skippedTestCount} skipped"
+		}
+	}
 }
