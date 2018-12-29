@@ -1,4 +1,4 @@
-package starter.example.learnspringboot.order.services;
+package starter.example.learnspringboot.domains.order.services;
 
 import org.springframework.stereotype.Service;
 
