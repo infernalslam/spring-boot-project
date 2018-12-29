@@ -1,4 +1,5 @@
 package starter.example.learnspringboot.domains.order.controllers;
+import com.sun.tools.corba.se.idl.constExpr.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import starter.example.learnspringboot.clients.apis.RestApis;
@@ -20,6 +21,16 @@ public class OrderController {
     @GetMapping("/{id}")
     public OrderDTO fetchApisUser (@PathVariable long id) {
         return restApis.fetchOrderUser(id);
+    }
+
+    @GetMapping("/test")
+    public String test () {
+        return orderService.heathCheck();
+    }
+
+    @GetMapping("/odd")
+    public List<OrderDTO> odd () {
+        return orderService.OddUserId();
     }
 
 //    @GetMapping
