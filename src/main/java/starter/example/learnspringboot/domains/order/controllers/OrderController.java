@@ -9,7 +9,7 @@ import starter.example.learnspringboot.dto.OrderDTO;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/status")
+@RequestMapping("/api/order")
 public class OrderController {
     @Autowired
     private OrderService orderService;
