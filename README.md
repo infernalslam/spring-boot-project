@@ -10,7 +10,7 @@ Now learning todo list.
 - [x] provide controller api.
 - [x] login (JWT) controller and security.
 - [x] unit test code quality.
-- [ ] integrate mysql in tool migration db.
+- [x] integrate mysql in tool migration db.
 - [x] provide client for connect external api.
 - [ ] loger error.
 
@@ -48,4 +48,28 @@ test {
 
 ```
 '
-mock interface for test services 
+
+
+migration spring boot with flyway
+Doc: https://flywaydb.org/documentation/migrations
+
+
+SQL-based migrations
+Migrations are most commonly written in SQL. This makes it easy to get started and leverage any existing scripts, tools and skills. It gives you access to the full set of capabilities of your database and eliminates the need to understand any intermediate translation layer.
+
+SQL-based migrations are typically used for
+
+DDL changes (CREATE/ALTER/DROP statements for TABLES,VIEWS,TRIGGERS,SEQUENCES,…)
+Simple reference data changes (CRUD in reference data tables)
+Simple bulk data changes (CRUD in regular data tables)
+Naming
+In order to be picked up by Flyway, SQL migrations must comply with the following naming pattern:
+
+
+The file name consists of the following parts:
+
+Prefix: V for versioned (configurable), U for undo (configurable) and R for repeatable migrations (configurable)
+Version: Version with dots or underscores separate as many parts as you like (Not for repeatable migrations)
+Separator: __ (two underscores) (configurable)
+Description: Underscores or spaces separate the words
+Suffix: .sql (configurable)
